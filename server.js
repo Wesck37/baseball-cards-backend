@@ -24,7 +24,7 @@ app.use(express.json()); // Required for parsing JSON bodies
 
 // Connect to MongoDB
 mongoose
-  .connect('mongodb://localhost:27017/baseballCardsDB', {
+  .connect('mongodb+srv://Wesck37:<Thirty37!>@cluster0.tjlxi8n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -53,3 +53,6 @@ app.post('/api/data', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+// mongodb://localhost:27017/baseballCardsDB
