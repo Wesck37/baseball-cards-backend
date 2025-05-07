@@ -9,6 +9,7 @@ const profileRoutes = require('./routes/profileRoutes'); // Import the profile r
 const userRoutes = require('./routes/userRoutes'); // Import userRoutes
 const ebayRoutes = require('./routes/ebayRoutes');
 
+const { getMongoDbURL } = require("./helpers/dataHelpers");
 const app = express();
 const PORT = 5000; // 
 
@@ -24,7 +25,7 @@ app.use(express.json()); // Required for parsing JSON bodies
 
 // Connect to MongoDB
 mongoose
-  .connect('mongodb://localhost:27017/baseballCardsDB', {
+  .connect(getMongoDbURL(), {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -53,3 +54,6 @@ app.post('/api/data', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+// mongodb://localhost:27017/baseballCardsDB
