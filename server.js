@@ -11,7 +11,7 @@ const ebayRoutes = require('./routes/ebayRoutes');
 
 const { getMongoDbURL } = require("./helpers/dataHelpers");
 const app = express();
-const PORT = 5000; // 
+const PORT = process.env.PORT || 5000; // 
 
 // Log the SECRET_KEY to verify it's loaded correctly
 console.log('REACT_APP_JWT_SECRET_KEY:', process.env.REACT_APP_JWT_SECRET_KEY);
